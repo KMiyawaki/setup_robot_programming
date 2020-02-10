@@ -12,12 +12,21 @@ cd setup_robot_programming
 ./install_ros.sh
 ```
 
-* Close and reopen the terminal.
+- Close and reopen the terminal.
 
 ```shell
 cd ~/setup_robot_programming
 source ./init_workspace.sh # Use with source command.
 ./install_microbot.sh
+```
+
+## Install VSCode(optional)
+
+- **Do not install VSCode into WSL**
+  - Use [Visual Studio Code Remote - WSL](https://code.visualstudio.com/docs/remote/wsl)
+
+```shell
+./install_vscode.sh
 ./install_vscode_plugins.sh
 ```
 
@@ -48,7 +57,7 @@ cd ~/setup_robot_programming
 ./create_user.sh new_user_name
 ```
 
-* Log out, and log in by new_user_name.
+- Log out, and log in by new_user_name.
 
 ```shell
 cd
