@@ -16,6 +16,7 @@ cd setup_robot_programming
 
 ```shell
 cd ~/setup_robot_programming
+./install_ros_web.sh
 source ./init_workspace.sh # Use with source command.
 ./install_microbot.sh
 ```
