@@ -69,3 +69,12 @@ source ./init_workspace.sh # Use with source command.
 ./install_vscode_plugins.sh
 ./install_japanese.sh # optional
 ```
+
+## Test ROS Stage simulator
+
+```shell
+roscd my_microbot_apps/launch/simulation
+roslaunch navigation.launch use_teleop:=true
+```
+
+- You will see RViz and Stage simulator.
