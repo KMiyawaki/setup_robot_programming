@@ -1,6 +1,4 @@
 #!/bin/bash
-#pip2
-sudo /usr/bin/python2 -m pip install pycrc -U
 cd ~/catkin_ws/src
 git clone https://github.com/KMiyawaki/oit_navigation_microbot_01.git
 git clone https://github.com/KMiyawaki/my_microbot_apps.git
