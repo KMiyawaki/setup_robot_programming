@@ -21,7 +21,7 @@ source ./init_workspace.sh # Use with source command.
 ./install_vscode_plugins.sh
 ```
 
-## Fix Time Differences in Ubuntu 16.04 & Windows 10 Dual Boot(optional)
+## Fix Time Differences in Ubuntu & Windows 10 Dual Boot(optional)
 
 ```shell
 sudo timedatectl set-local-rtc 1
