@@ -7,6 +7,7 @@ git clone https://github.com/KMiyawaki/setup_robot_programming.git
 cd setup_robot_programming
 ./stop_update.sh
 ./install_basic_packages.sh
+./install_chrome.sh
 ./add_user_groups.sh
 ./install_ros.sh
 ```
