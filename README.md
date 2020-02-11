@@ -70,6 +70,20 @@ source ./init_workspace.sh # Use with source command.
 ./install_japanese.sh # optional
 ```
 
+## Setup GUI for WSL
+
+- WSL only.
+- Install X server running on Windows.
+  - [VcXsrv](https://sourceforge.net/projects/vcxsrv/)
+
+```shell
+sudo apt install x11-apps x11-utils x11-xserver-utils dbus-x11
+cd
+echo 'export DISPLAY=localhost:0.0' >> ~/.bashrc
+echo 'export LIBGL_ALWAYS_INDIRECT=0' >> ~/.bashrc
+source ~/.bashrc
+```
+
 ## Test ROS Stage simulator
 
 ```shell

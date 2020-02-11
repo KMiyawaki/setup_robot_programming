@@ -20,7 +20,10 @@ sudo apt install ros-melodic-navigation -y
 sudo apt install ros-melodic-joy -y
 sudo apt install ros-melodic-teleop-twist-joy -y
 sudo apt install ros-melodic-laser-filters -y
+sudo apt install ros-melodic-laser-pipeline -y
 sudo apt install ros-melodic-slam-gmapping -y
+sudo apt install ros-melodic-map-server -y
 sudo apt install ros-melodic-cv-camera -y
+sudo apt install ros-melodic-teleop-twist-keyboard -y
 sudo apt install ros-melodic-mouse-teleop -y
 echo "**Done**"
