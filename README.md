@@ -84,6 +84,10 @@ echo 'export LIBGL_ALWAYS_INDIRECT=0' >> ~/.bashrc
 source ~/.bashrc
 ```
 
+## Adapter setting for Virtual Box
+
+- Set Promiscuous Mode to **Allow All**.
+
 ## Test ROS Stage simulator
 
 ```shell
