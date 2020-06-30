@@ -25,4 +25,5 @@ sudo apt install ros-melodic-map-server -y
 sudo apt install ros-melodic-cv-camera -y
 sudo apt install ros-melodic-teleop-twist-keyboard -y
 sudo apt install ros-melodic-mouse-teleop -y
+sudo apt install ros-melodic-joint-state-publisher-gui -y
 echo "**Done**"
