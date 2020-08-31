@@ -65,6 +65,7 @@ cd
 git clone https://github.com/KMiyawaki/setup_robot_programming.git
 cd setup_robot_programming
 source ./init_workspace.sh # Use with source command.
+./install_ros_web.sh
 ./install_microbot.sh
 ./install_vscode_plugins.sh
 ./install_japanese.sh # optional
