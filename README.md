@@ -1,10 +1,25 @@
 # Setup Robot Programming PC
 
+## Clone scripts
+
 ```shell
 sudo apt install git -y
 cd
 git clone https://github.com/KMiyawaki/setup_robot_programming.git
-cd setup_robot_programming
+```
+
+## For Ubuntu 16.04
+
+```shell
+cd ~/setup_robot_programming
+./fix_ubuntu16_appstreamcli.sh
+./fix_ubuntu16_crash_report.sh
+```
+
+## Install ROS and other software
+
+```shell
+cd ~/setup_robot_programming
 ./stop_update.sh
 ./install_basic_packages.sh
 ./install_chrome.sh
