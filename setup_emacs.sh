@@ -1,4 +1,5 @@
 #!/bin/bash
+TARGET_ROS=`./get_ros_distoro.sh`
 if [ ! -d ~/.emacs.d ]; then
   mkdir ~/.emacs.d
 fi
@@ -8,8 +9,8 @@ fi
 if ! grep -q "(setq inhibit-startup-message t)" ~/.emacs.d/init.el; then
   echo "(setq inhibit-startup-message t)" >> ~/.emacs.d/init.el
 fi
-if ! grep -q "(add-to-list 'load-path \"/opt/ros/melodic/share/emacs/site-lisp\")" ~/.emacs.d/init.el; then
-  echo "(add-to-list 'load-path \"/opt/ros/melodic/share/emacs/site-lisp\")" >> ~/.emacs.d/init.el
+if ! grep -q "(add-to-list 'load-path \"/opt/ros/${TARGET_ROS}/share/emacs/site-lisp\")" ~/.emacs.d/init.el; then
+  echo "(add-to-list 'load-path \"/opt/ros/${TARGET_ROS}/share/emacs/site-lisp\")" >> ~/.emacs.d/init.el
 fi
 if ! grep -q "(require 'rosemacs-config)" ~/.emacs.d/init.el; then
   echo "(require 'rosemacs-config)" >> ~/.emacs.d/init.el

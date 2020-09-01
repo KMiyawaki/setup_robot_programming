@@ -1,8 +1,10 @@
 #!/bin/bash
-sudo apt install ros-melodic-roswww -y
-sudo apt install ros-melodic-rosbridge-suite -y
-sudo apt install ros-melodic-web-video-server -y
-sudo apt install ros-melodic-tf2-web-republisher -y
+TARGET_ROS=`./get_ros_distoro.sh`
+echo "Start install ros-${TARGET_ROS} web packages"
+sudo apt install ros-${TARGET_ROS}-roswww -y
+sudo apt install ros-${TARGET_ROS}-rosbridge-suite -y
+sudo apt install ros-${TARGET_ROS}-web-video-server -y
+sudo apt install ros-${TARGET_ROS}-tf2-web-republisher -y
 sudo /usr/bin/python2 -m pip install tornado -U
 sudo /usr/bin/python2 -m pip install pymongo -U
 cd ~/catkin_ws/src

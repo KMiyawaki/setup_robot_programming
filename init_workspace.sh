@@ -1,9 +1,10 @@
 #!/bin/bash
-echo "**Making workspace**"
+TARGET_ROS=`./get_ros_distoro.sh`
+echo "**Making workspace. Target ros-${TARGET_ROS}**"
 CRNT_WD=`pwd`
 ./setup_emacs.sh
-if ! grep -q /opt/ros/melodic/setup.bash ~/.bashrc; then
-  echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
+if ! grep -q /opt/ros/${TARGET_ROS}/setup.bash ~/.bashrc; then
+  echo "source /opt/ros/${TARGET_ROS}/setup.bash" >> ~/.bashrc
   source ~/.bashrc
 fi
 mkdir -p ~/catkin_ws/src
