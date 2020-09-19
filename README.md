@@ -66,7 +66,7 @@ cd ~/setup_robot_programming
 ./upgrade_packages.sh
 ```
 
-## Create new user
+## Create new user(optional)
 
 ```shell
 cd ~/setup_robot_programming
@@ -86,7 +86,7 @@ source ./init_workspace.sh # Use with source command.
 ./install_japanese.sh # optional
 ```
 
-## Setup GUI for WSL
+## Setup GUI for WSL(optional)
 
 - WSL only.
 - Install X server running on Windows.
@@ -100,7 +100,7 @@ echo 'export LIBGL_ALWAYS_INDIRECT=0' >> ~/.bashrc
 source ~/.bashrc
 ```
 
-## Adapter setting for Virtual Box
+## Adapter setting for Virtual Box(optional)
 
 - Set Promiscuous Mode to **Allow All**.
 
