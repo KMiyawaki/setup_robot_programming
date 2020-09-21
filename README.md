@@ -8,7 +8,7 @@ cd
 git clone https://github.com/KMiyawaki/setup_robot_programming.git
 ```
 
-## For Ubuntu 16.04
+## For Ubuntu 16.04(optional)
 
 ```shell
 cd ~/setup_robot_programming
