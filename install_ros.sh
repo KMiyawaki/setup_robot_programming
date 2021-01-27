@@ -15,21 +15,22 @@ fi
 # ROS packages
 sudo apt install ros-${TARGET_ROS}-rosemacs -y
 ./setup_emacs.sh
-sudo apt install ros-${TARGET_ROS}-image-transport -y
-sudo apt install ros-${TARGET_ROS}-image-transport-plugins -y
-sudo apt install ros-${TARGET_ROS}-navigation -y
-sudo apt install ros-${TARGET_ROS}-joy -y
-sudo apt install ros-${TARGET_ROS}-teleop-twist-joy -y
-sudo apt install ros-${TARGET_ROS}-laser-filters -y
-sudo apt install ros-${TARGET_ROS}-laser-pipeline -y
-sudo apt install ros-${TARGET_ROS}-slam-gmapping -y
-sudo apt install ros-${TARGET_ROS}-map-server -y
-sudo apt install ros-${TARGET_ROS}-cv-camera -y
-sudo apt install ros-${TARGET_ROS}-teleop-twist-keyboard -y
-sudo apt install ros-${TARGET_ROS}-mouse-teleop -y
-sudo apt install ros-${TARGET_ROS}-joint-state-publisher-gui -y
-sudo apt install ros-${TARGET_ROS}-xacro
-sudo apt install ros-${TARGET_ROS}-rviz
-sudo apt install ros-${TARGET_ROS}-rosbash
-sudo apt install ros-${TARGET_ROS}-robot-stage-publisher
+sudo apt install ros-${TARGET_ROS}-cv-camera -y
+sudo apt install ros-${TARGET_ROS}-image-transport -y
+sudo apt install ros-${TARGET_ROS}-image-transport-plugins -y
+sudo apt install ros-${TARGET_ROS}-joint-state-publisher-gui -y
+sudo apt install ros-${TARGET_ROS}-joy -y
+sudo apt install ros-${TARGET_ROS}-laser-filters -y
+sudo apt install ros-${TARGET_ROS}-laser-pipeline -y
+sudo apt install ros-${TARGET_ROS}-map-server -y
+sudo apt install ros-${TARGET_ROS}-mouse-teleop -y
+sudo apt install ros-${TARGET_ROS}-navigation -y
+sudo apt install ros-${TARGET_ROS}-robot-state-publisher -y
+sudo apt install ros-${TARGET_ROS}-rosbash -y
+sudo apt install ros-${TARGET_ROS}-rviz -y
+sudo apt install ros-${TARGET_ROS}-slam-gmapping -y
+sudo apt install ros-${TARGET_ROS}-stage-ros -y
+sudo apt install ros-${TARGET_ROS}-teleop-twist-joy -y
+sudo apt install ros-${TARGET_ROS}-teleop-twist-keyboard -y
+sudo apt install ros-${TARGET_ROS}-xacro -y
 echo "**Done**"
