@@ -9,3 +9,4 @@ sudo apt install openssh-server -y
 sudo apt install python-pip -y
 sudo apt install python3-pip -y 
 sudo apt install gparted -y 
+sudo apt install x11-apps x11-utils x11-xserver-utils dbus-x11 -y

@@ -1,6 +1,5 @@
-# Setup Robot Programming PC
+# Setup Robot Programming for WSL
 
-If you want to use WSL, see [this](./WSL.md).
 ## Clone scripts
 
 ```shell
@@ -9,23 +8,12 @@ $ cd
 $ git clone https://github.com/KMiyawaki/setup_robot_programming.git
 ```
 
-## For Ubuntu 16.04(optional)
-
-```shell
-$ cd ~/setup_robot_programming
-$ ./fix_ubuntu16_appstreamcli.sh
-$ ./fix_ubuntu16_crash_report.sh
-```
-
 ## Install ROS and other software
 
 ```shell
 $ cd ~/setup_robot_programming
-$ ./stop_update.sh
 $ ./install_basic_packages.sh
 $ ./install_python_packages.sh
-$ ./install_chrome.sh
-$ ./add_user_groups.sh
 $ ./install_ros.sh
 ```
 
@@ -35,20 +23,15 @@ $ ./install_ros.sh
 $ cd ~/setup_robot_programming
 $ source ./init_workspace.sh # Use with source command.
 $ ./install_ros_web.sh
-$ ./install_microbot.sh
 ```
 
-## Install VSCode(optional)
+## Install VSCode Extensions
+
+- **Do not install VSCode into WSL**
+  - Use [Visual Studio Code Remote - WSL](https://code.visualstudio.com/docs/remote/wsl)
 
 ```shell
-./install_vscode.sh
-./install_vscode_extensions.sh
-```
-
-## Fix Time Differences in Ubuntu & Windows 10 Dual Boot(optional)
-
-```shell
-$ sudo timedatectl set-local-rtc 1
+$ ./install_vscode_extensions_from_file.sh
 ```
 
 ## Japanese language support(optional)
@@ -80,20 +63,39 @@ $ git clone https://github.com/KMiyawaki/setup_robot_programming.git
 $ cd setup_robot_programming
 $ source ./init_workspace.sh # Use with source command.
 $ ./install_ros_web.sh
-$ ./install_microbot.sh
-$ ./install_vscode_extensions.sh
+$ ./install_vscode_extensions_from_file.sh
 $ ./install_japanese.sh # optional
 ```
 
-## Adapter setting for Virtual Box(optional)
+## Setup GUI for WSL
 
-- Set Promiscuous Mode to **Allow All**.
+- Install X server running on Windows.
+  - [VcXsrv](https://sourceforge.net/projects/vcxsrv/)
+
+```shell
+$ cd
+$ echo 'export DISPLAY=localhost:0.0' >> ~/.bashrc
+$ echo 'export LIBGL_ALWAYS_INDIRECT=0' >> ~/.bashrc
+$ source ~/.bashrc
+```
 
 ## Test ROS Stage simulator
 
 ```shell
-$ roscd my_microbot_apps/launch/simulation
-$ roslaunch navigation.launch use_teleop:=true
+$ cd ~/catkin_ws/src
+$ git clone https://github.com/KMiyawaki/oit_robosim.git
+$ cd ~/catkin_ws/src/oit_robosim/launch/simulation
+$ roslaunch ./simple.launch
 ```
 
 - You will see RViz and Stage simulator.
+
+## Cleanup APT and /tmp (optional)
+
+```shell
+$ cd ~/setup_robot_programming
+$ ./cleanup_apt.sh
+$ rm -fr /tmp/*
+```
+
+This will reduce exported WSL image file size.
