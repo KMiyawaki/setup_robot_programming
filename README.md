@@ -22,6 +22,7 @@ cd ~/setup_robot_programming
 cd ~/setup_robot_programming
 ./stop_update.sh
 ./install_basic_packages.sh
+./install_python_packages.sh
 ./install_chrome.sh
 ./add_user_groups.sh
 ./install_ros.sh
@@ -43,7 +44,7 @@ source ./init_workspace.sh # Use with source command.
 
 ```shell
 ./install_vscode.sh
-./install_vscode_plugins.sh
+./install_vscode_extensions.sh
 ```
 
 ## Fix Time Differences in Ubuntu & Windows 10 Dual Boot(optional)
