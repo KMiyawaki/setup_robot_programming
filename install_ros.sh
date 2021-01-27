@@ -28,4 +28,8 @@ sudo apt install ros-${TARGET_ROS}-cv-camera -y
 sudo apt install ros-${TARGET_ROS}-teleop-twist-keyboard -y
 sudo apt install ros-${TARGET_ROS}-mouse-teleop -y
 sudo apt install ros-${TARGET_ROS}-joint-state-publisher-gui -y
+sudo apt install ros-${TARGET_ROS}-xacro
+sudo apt install ros-${TARGET_ROS}-rviz
+sudo apt install ros-${TARGET_ROS}-rosbash
+sudo apt install ros-${TARGET_ROS}-robot-stage-publisher
 echo "**Done**"
