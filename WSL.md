@@ -23,6 +23,7 @@ Install ROS base.
 $ cd ~/setup_robot_programming
 $ ./install_ros.sh
 $ source ./init_workspace.sh # Use with source command.
+$ source ~/.bashrc
 ```
 
 ### Setup GUI for WSL
