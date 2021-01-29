@@ -17,6 +17,7 @@ sudo apt install -y --no-install-recommends ros-${TARGET_ROS}-rosbash
 sudo apt install -y --no-install-recommends ros-${TARGET_ROS}-rviz
 sudo apt install -y --no-install-recommends ros-${TARGET_ROS}-slam-gmapping
 sudo apt install -y --no-install-recommends ros-${TARGET_ROS}-stage-ros
+sudo apt install -y --no-install-recommends ros-${TARGET_ROS}-rosbridge-suite
 sudo apt install -y --no-install-recommends ros-${TARGET_ROS}-teleop-twist-joy
 sudo apt install -y --no-install-recommends ros-${TARGET_ROS}-teleop-twist-keyboard
 sudo apt install -y --no-install-recommends ros-${TARGET_ROS}-xacro
