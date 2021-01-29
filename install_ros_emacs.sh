@@ -6,9 +6,7 @@ fi
 if [ ! -e ~/.emacs.d/init.el ]; then
   touch ~/.emacs.d/init.el
 fi
-if ! grep -q "(setq inhibit-startup-message t)" ~/.emacs.d/init.el; then
-  echo "(setq inhibit-startup-message t)" >> ~/.emacs.d/init.el
-fi
+sudo apt install -y --no-install-recommends ros-${TARGET_ROS}-rosemacs
 if ! grep -q "(add-to-list 'load-path \"/opt/ros/${TARGET_ROS}/share/emacs/site-lisp\")" ~/.emacs.d/init.el; then
   echo "(add-to-list 'load-path \"/opt/ros/${TARGET_ROS}/share/emacs/site-lisp\")" >> ~/.emacs.d/init.el
 fi

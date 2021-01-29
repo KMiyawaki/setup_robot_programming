@@ -1,13 +1,22 @@
 #!/bin/bash
-sudo sed -i 's@archive.ubuntu.com@ftp.jaist.ac.jp/pub/Linux@g' /etc/apt/sources.list
 sudo apt update
-sudo apt install curl -y
-sudo apt install emacs -y
-sudo apt install exfat-fuse exfat-utils -y
-sudo apt install net-tools -y
-sudo apt install openssh-server -y
-sudo apt install python-pip -y
-sudo apt install python3-pip -y 
-sudo apt install zip unzip -y
-sudo apt install gparted -y 
-sudo apt install x11-apps x11-utils x11-xserver-utils dbus-x11 -y
+sudo apt install -y --no-install-recommends curl
+sudo apt install -y --no-install-recommends emacs
+sudo apt install -y --no-install-recommends net-tools
+sudo apt install -y --no-install-recommends openssh-server
+sudo apt install -y --no-install-recommends python-pip
+sudo apt install -y --no-install-recommends python3-pip
+sudo apt install -y --no-install-recommends python3-setuptools
+sudo apt install -y --no-install-recommends zip unzip
+sudo apt install -y --no-install-recommends x11-apps x11-utils x11-xserver-utils dbus-x11
+
+# emacs
+if [ ! -d ~/.emacs.d ]; then
+  mkdir ~/.emacs.d
+fi
+if [ ! -e ~/.emacs.d/init.el ]; then
+  touch ~/.emacs.d/init.el
+fi
+if ! grep -q "(setq inhibit-startup-message t)" ~/.emacs.d/init.el; then
+  echo "(setq inhibit-startup-message t)" >> ~/.emacs.d/init.el
+fi

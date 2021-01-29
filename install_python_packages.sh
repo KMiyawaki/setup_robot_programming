@@ -1,5 +1,5 @@
 #/bin/bash
-sudo apt install python-tk
+sudo apt install -y --no-install-recommends python-tk
 sudo /usr/bin/python2 -m pip install pylint -U
 sudo /usr/bin/python3 -m pip install pylint -U
 sudo /usr/bin/python2 -m pip install autopep8 -U 

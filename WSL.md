@@ -3,50 +3,105 @@
 ## Clone scripts
 
 ```shell
-$ sudo apt install git -y
-$ cd
 $ git clone https://github.com/KMiyawaki/setup_robot_programming.git
 ```
 
-## Install ROS and other software
+If `git` command was not found, run `sudo apt install git -y`.
+
+## Setup minimal ROS environment
+
+If you are in Japan, setup Japanese apt mirror.
+
+```shell
+$ cd ~/setup_robot_programming
+$ ./set_japanese_apt.sh
+```
+
+Install ROS base.
+
+```shell
+$ cd ~/setup_robot_programming
+$ ./install_ros.sh
+$ source ./init_workspace.sh # Use with source command.
+```
+
+### Setup GUI for WSL
+
+Install X server running on Windows.
+
+- [VcXsrv](https://sourceforge.net/projects/vcxsrv/)
+
+```shell
+$ cd
+$ echo 'export DISPLAY=localhost:0.0' >> ~/.bashrc
+$ echo 'export LIBGL_ALWAYS_INDIRECT=0' >> ~/.bashrc
+$ source ~/.bashrc
+```
+
+## Install All other software
+
+```shell
+$ cd ~/setup_robot_programming
+$ ./setup_wsl_pbl_ros.sh
+```
+
+Restart WSL.
+
+## Test ROS Stage simulator
+
+```shell
+$ cd ~/catkin_ws/src
+$ git clone https://github.com/KMiyawaki/oit_robosim.git
+$ cd ~/catkin_ws/src/oit_robosim/launch/simulation
+$ roslaunch ./simple.launch
+```
+
+You will see RViz and Stage simulator.
+
+## Step by step setup
+
+### Install ROS and other software
 
 ```shell
 $ cd ~/setup_robot_programming
 $ ./install_basic_packages.sh
 $ ./install_python_packages.sh
-$ ./install_ros.sh
+$ ./install_ros_packages.sh
 ```
 
-- Close and reopen the terminal.
+### Install VSCode Extensions
 
-```shell
-$ cd ~/setup_robot_programming
-$ source ./init_workspace.sh # Use with source command.
-$ ./install_ros_web.sh
-```
+**Do not install VSCode into WSL**
 
-## Install VSCode Extensions
-
-- **Do not install VSCode into WSL**
-  - Use [Visual Studio Code Remote - WSL](https://code.visualstudio.com/docs/remote/wsl)
+- Use [Visual Studio Code Remote - WSL](https://code.visualstudio.com/docs/remote/wsl)
 
 ```shell
 $ ./install_vscode_extensions_from_file.sh
 ```
 
-## Japanese language support(optional)
-
-```shell
-$ cd ~/setup_robot_programming
-$ ./install_japanese.sh
-```
-
-## Upgrade all ubuntu packages
+### Upgrade all ubuntu packages
 
 ```shell
 $ cd ~/setup_robot_programming
 $ ./upgrade_packages.sh
 ```
+
+## Install ROS emacs(optional)
+
+```shell
+$ cd ~/setup_robot_programming
+$ ./install_ros_emacs.sh
+```
+
+### Cleanup APT and /tmp (optional)
+
+```shell
+$ cd ~/setup_robot_programming
+$ ./cleanup_apt.sh
+$ rm -fr /tmp/*
+```
+
+This will reduce exported WSL image file size.
 
 ## Create new user(optional)
 
@@ -55,7 +110,7 @@ $ cd ~/setup_robot_programming
 $ ./create_user.sh new_user_name
 ```
 
-- Log out, and log in by new_user_name.
+Log out, and log in by new_user_name.
 
 ```shell
 $ cd
@@ -67,35 +122,9 @@ $ ./install_vscode_extensions_from_file.sh
 $ ./install_japanese.sh # optional
 ```
 
-## Setup GUI for WSL
-
-- Install X server running on Windows.
-  - [VcXsrv](https://sourceforge.net/projects/vcxsrv/)
-
-```shell
-$ cd
-$ echo 'export DISPLAY=localhost:0.0' >> ~/.bashrc
-$ echo 'export LIBGL_ALWAYS_INDIRECT=0' >> ~/.bashrc
-$ source ~/.bashrc
-```
-
-## Test ROS Stage simulator
-
-```shell
-$ cd ~/catkin_ws/src
-$ git clone https://github.com/KMiyawaki/oit_robosim.git
-$ cd ~/catkin_ws/src/oit_robosim/launch/simulation
-$ roslaunch ./simple.launch
-```
-
-- You will see RViz and Stage simulator.
-
-## Cleanup APT and /tmp (optional)
+## Japanese language support(optional)
 
 ```shell
 $ cd ~/setup_robot_programming
-$ ./cleanup_apt.sh
-$ rm -fr /tmp/*
+$ ./install_japanese.sh
 ```
-
-This will reduce exported WSL image file size.

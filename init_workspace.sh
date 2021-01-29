@@ -2,11 +2,10 @@
 TARGET_ROS=`./get_ros_distoro.sh`
 echo "**Making workspace. Target ros-${TARGET_ROS}**"
 CRNT_WD=`pwd`
-./setup_emacs.sh
 if ! grep -q /opt/ros/${TARGET_ROS}/setup.bash ~/.bashrc; then
   echo "source /opt/ros/${TARGET_ROS}/setup.bash" >> ~/.bashrc
-  source ~/.bashrc
 fi
+source ~/.bashrc
 mkdir -p ~/catkin_ws/src
 cd ~/catkin_ws/src/
 catkin_init_workspace
