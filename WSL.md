@@ -48,6 +48,13 @@ $ roslaunch ./simple.launch
 
 You will see RViz and Stage simulator.
 
+## Install Japanese (optional)
+
+```shell
+$ cd ~/setup_robot_programming
+$ ./install_japanese.sh
+```
+
 ## Install Turtlebot3 with gazebo (optional)
 
 ```shell
@@ -140,5 +147,4 @@ $ cd setup_robot_programming
 $ source ./init_workspace.sh # Use with source command.
 $ ./install_ros_web.sh
 $ ./install_vscode_extensions_from_file.sh
-$ ./install_japanese.sh # optional
 ```
