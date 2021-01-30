@@ -1,16 +1,17 @@
 #!/bin/bash
 
 TARGET_ROS=`./get_ros_distoro.sh`
+ROS_SETUP="/opt/ros/${TARGET_ROS}/setup.bash"
+source ${ROS_SETUP}
 echo "Start install ros-${TARGET_ROS} turtlebot packages"
-sudo apt install -y --no-install-recommends ros-${TARGET_ROS}-gazebo-ros
-sudo apt install -y --no-install-recommends ros-${TARGET_ROS}-turtlebot3-msgs
-sudo apt install -y --no-install-recommends ros-${TARGET_ROS}-turtlebot3
+sudo apt-get install -y --no-install-recommends ros-${TARGET_ROS}-gazebo-ros
+sudo apt-get install -y --no-install-recommends ros-${TARGET_ROS}-turtlebot3-msgs
+sudo apt-get install -y --no-install-recommends ros-${TARGET_ROS}-turtlebot3
 cd ~/catkin_ws/src
 git clone -b ${TARGET_ROS}-devel https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git
 
 if ! grep -q TURTLEBOT3_MODEL ~/.bashrc; then
   echo "export TURTLEBOT3_MODEL=burger" >> ~/.bashrc
-  source ~/.bashrc
 fi
 
 cd ~/catkin_ws
