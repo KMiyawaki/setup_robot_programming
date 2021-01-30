@@ -12,8 +12,5 @@ fi
 ./install_python_packages.sh
 ./install_ros_packages.sh
 ./install_vscode_extensions_from_file.sh
-if [ ${MYCOUNTRY} = "JP" ]; then
-    ./install_japanese.sh
-fi
 ./upgrade_packages.sh
 ./init_workspace.sh
