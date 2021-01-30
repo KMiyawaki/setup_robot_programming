@@ -4,7 +4,7 @@ If you want to use WSL, see [this](./WSL.md).
 ## Clone scripts
 
 ```shell
-$ sudo apt install git -y
+$ sudo apt-get install git -y
 $ cd
 $ git clone https://github.com/KMiyawaki/setup_robot_programming.git
 ```

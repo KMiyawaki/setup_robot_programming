@@ -6,11 +6,11 @@
 $ git clone https://github.com/KMiyawaki/setup_robot_programming.git
 ```
 
-If `git` command was not found, run `sudo apt install git -y`.
+If `git` command was not found, run `sudo apt-get install git -y`.
 
 ## Setup minimal ROS environment
 
-If you are in Japan, setup Japanese apt mirror.
+If you are in Japan, setup Japanese apt-get mirror.
 
 ```shell
 $ cd ~/setup_robot_programming
