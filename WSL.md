@@ -48,6 +48,15 @@ $ roslaunch ./simple.launch
 
 You will see RViz and Stage simulator.
 
+## Install Turtlebot3 with gazebo (optional)
+
+```shell
+$ cd ~/setup_robot_programming
+$ ./install_turtlebot3.sh
+```
+
+See [ROBOTIS e-Manual](https://emanual.robotis.com/docs/en/platform/turtlebot3/simulation/).
+
 ## Step by step setup
 
 If you are in Japan, setup Japanese apt mirror.
