@@ -8,22 +8,20 @@ $ git clone https://github.com/KMiyawaki/setup_robot_programming.git
 
 If `git` command was not found, run `sudo apt-get install git -y`.
 
-## Setup minimal ROS environment
-
-If you are in Japan, setup Japanese apt-get mirror.
+## Setup
 
 ```shell
 $ cd ~/setup_robot_programming
-$ ./set_japanese_apt.sh
+$ ./setup_wsl_pbl_ros.sh
 ```
 
-Install ROS base.
+Restart WSL.
+
+If you are **NOT** in Japan, add `NOJP` option.
 
 ```shell
 $ cd ~/setup_robot_programming
-$ ./install_ros.sh
-$ source ./init_workspace.sh # Use with source command.
-$ source ~/.bashrc
+$ ./setup_wsl_pbl_ros.sh NOJP
 ```
 
 ### Setup GUI for WSL
@@ -39,15 +37,6 @@ $ echo 'export LIBGL_ALWAYS_INDIRECT=0' >> ~/.bashrc
 $ source ~/.bashrc
 ```
 
-## Install All other software
-
-```shell
-$ cd ~/setup_robot_programming
-$ ./setup_wsl_pbl_ros.sh
-```
-
-Restart WSL.
-
 ## Test ROS Stage simulator
 
 ```shell
@@ -61,7 +50,21 @@ You will see RViz and Stage simulator.
 
 ## Step by step setup
 
-### Install ROS and other software
+If you are in Japan, setup Japanese apt mirror.
+
+```shell
+$ cd ~/setup_robot_programming
+$ ./set_japanese_apt.sh
+```
+
+### Install ROS base.
+
+```shell
+$ cd ~/setup_robot_programming
+$ ./install_ros.sh
+```
+
+### Install other software and ROS packages
 
 ```shell
 $ cd ~/setup_robot_programming
@@ -74,7 +77,7 @@ $ ./install_ros_packages.sh
 
 **Do not install VSCode into WSL**
 
-- Use [Visual Studio Code Remote - WSL](https://code.visualstudio.com/docs/remote/wsl)
+Use [Visual Studio Code Remote - WSL](https://code.visualstudio.com/docs/remote/wsl)
 
 ```shell
 $ ./install_vscode_extensions_from_file.sh
@@ -85,6 +88,14 @@ $ ./install_vscode_extensions_from_file.sh
 ```shell
 $ cd ~/setup_robot_programming
 $ ./upgrade_packages.sh
+```
+
+### Init catkin workspace
+
+```shell
+$ cd ~/setup_robot_programming
+$ ./init_workspace.sh
+$ source ~/.bashrc
 ```
 
 ## Install ROS emacs(optional)
