@@ -48,6 +48,15 @@ $ roslaunch ./simple.launch
 
 You will see RViz and Stage simulator.
 
+## Install SIGVerse ros bridge (optional)
+
+```shell
+$ cd ~/setup_robot_programming
+$ ./install_sigverse.sh
+```
+
+See [Tutorial for SIGVerse v3](http://www.sigverse.org/wiki/jp/?Tutorial%20for%20ver.3#t38ca130).
+
 ## Install Japanese (optional)
 
 ```shell
