@@ -1,5 +1,8 @@
 #!/bin/bash
 TARGET_ROS=`./get_ros_distoro.sh`
+if [ $? -ne 0 ]; then
+  exit 1
+fi
 INSTALL_TYPE="ros-base"
 if [ $# -ne 0 ]; then
   INSTALL_TYPE="${1}"
@@ -9,7 +12,16 @@ sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main
 sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
 sudo apt-get update
 sudo apt-get install -y ros-${TARGET_ROS}-${INSTALL_TYPE}
-sudo apt-get install -y python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential python-catkin-tools
+PYTHON_NAME="python"
+if [ ${TARGET_ROS} = "noetic" ]; then
+  PYTHON_NAME="python3"
+fi
+sudo apt-get install -y build-essential \
+                        ${PYTHON_NAME}-rosdep \
+                        ${PYTHON_NAME}-rosinstall \
+                        ${PYTHON_NAME}-rosinstall-generator \
+                        ${PYTHON_NAME}-wstool \
+                        ${PYTHON_NAME}-catkin-tools
 sudo rosdep init
 rosdep update
 if ! grep -q /opt/ros/${TARGET_ROS}/setup.bash ~/.bashrc; then

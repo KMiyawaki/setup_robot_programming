@@ -17,6 +17,10 @@ sudo make EP_mnmlstc_core
 make
 sudo make install
 
+TARGET_ROS=`./get_ros_distoro.sh`
+ROS_SETUP="/opt/ros/${TARGET_ROS}/setup.bash"
+source ${ROS_SETUP}
+
 cd ~/catkin_ws/src
 git clone https://github.com/SIGVerse/sigverse_ros_package.git
 cd ..

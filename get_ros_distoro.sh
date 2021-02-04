@@ -5,9 +5,13 @@ function main(){
         echo "kinetic"
     elif [[ $VERSION_ID =~ "18." ]]; then
         echo "melodic"
+    elif [[ $VERSION_ID =~ "20." ]]; then
+        echo "noetic"
     else
         echo "*** ${VERSION_ID} is not supported ***"
+        exit 1
     fi
+    exit 0
 }
 
 main "$@"
