@@ -5,6 +5,7 @@ echo "Start install ros-${TARGET_ROS} packages"
 sudo apt-get install -y --no-install-recommends ros-${TARGET_ROS}-cv-camera
 sudo apt-get install -y --no-install-recommends ros-${TARGET_ROS}-image-transport
 sudo apt-get install -y --no-install-recommends ros-${TARGET_ROS}-image-transport-plugins
+sudo apt-get install -y --no-install-recommends ros-${TARGET_ROS}-image-publisher
 sudo apt-get install -y --no-install-recommends ros-${TARGET_ROS}-joint-state-publisher-gui
 sudo apt-get install -y --no-install-recommends ros-${TARGET_ROS}-joy
 sudo apt-get install -y --no-install-recommends ros-${TARGET_ROS}-laser-filters
