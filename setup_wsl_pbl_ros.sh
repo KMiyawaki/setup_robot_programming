@@ -14,3 +14,7 @@ fi
 ./install_vscode_extensions_from_file.sh
 ./upgrade_packages.sh
 ./init_workspace.sh
+if [ ${MYCOUNTRY} = "JP" ]; then
+    echo "Japanese apt mirror will be used."
+    ./install_japanese.sh
+fi
