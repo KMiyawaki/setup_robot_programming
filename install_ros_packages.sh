@@ -22,3 +22,7 @@ sudo apt-get install -y --no-install-recommends ros-${TARGET_ROS}-rosbridge-suit
 sudo apt-get install -y --no-install-recommends ros-${TARGET_ROS}-teleop-twist-joy
 sudo apt-get install -y --no-install-recommends ros-${TARGET_ROS}-teleop-twist-keyboard
 sudo apt-get install -y --no-install-recommends ros-${TARGET_ROS}-xacro
+sudo apt-get install -y --no-install-recommends ros-${TARGET_ROS}-rqt
+sudo apt-get install -y --no-install-recommends ros-${TARGET_ROS}-rqt-common-plugins
+sudo apt-get install -y --no-install-recommends ros-${TARGET_ROS}-smach
+sudo apt-get install -y --no-install-recommends ros-${TARGET_ROS}-smach-viewer
