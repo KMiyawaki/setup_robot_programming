@@ -26,3 +26,4 @@ sudo apt-get install -y --no-install-recommends ros-${TARGET_ROS}-rqt
 sudo apt-get install -y --no-install-recommends ros-${TARGET_ROS}-rqt-common-plugins
 sudo apt-get install -y --no-install-recommends ros-${TARGET_ROS}-smach
 sudo apt-get install -y --no-install-recommends ros-${TARGET_ROS}-smach-viewer
+sudo apt-get install -y --no-install-recommends ros-${TARGET_ROS}-key-teleop
