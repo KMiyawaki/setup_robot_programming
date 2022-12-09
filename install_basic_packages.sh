@@ -1,22 +1,26 @@
 #!/bin/bash
-sudo apt-get update
-sudo apt-get install -y --no-install-recommends curl
-sudo apt-get install -y --no-install-recommends emacs
-sudo apt-get install -y --no-install-recommends net-tools
-sudo apt-get install -y --no-install-recommends openssh-server
-sudo apt-get install -y --no-install-recommends python-pip
-sudo apt-get install -y --no-install-recommends python3-pip
-sudo apt-get install -y --no-install-recommends python3-setuptools
-sudo apt-get install -y --no-install-recommends zip unzip
-sudo apt-get install -y --no-install-recommends x11-apps x11-utils x11-xserver-utils dbus-x11
 
-# emacs
-if [ ! -d ~/.emacs.d ]; then
-  mkdir ~/.emacs.d
-fi
-if [ ! -e ~/.emacs.d/init.el ]; then
-  touch ~/.emacs.d/init.el
-fi
-if ! grep -q "(setq inhibit-startup-message t)" ~/.emacs.d/init.el; then
-  echo "(setq inhibit-startup-message t)" >> ~/.emacs.d/init.el
-fi
+function main(){
+    sudo apt-get update
+    local -r PACKAGES="curl	dbus-x11 emacs net-tools openssh-server \
+    python-setuptools python3-setuptools python-pip python-tk \
+    unzip \
+    x11-apps x11-utils x11-xserver-utils \
+    zip"
+    
+    for p in ${PACKAGES}; do
+        sudo apt-get install -y --no-install-recommends ${p}
+    done
+    # emacs
+    if [ ! -d ~/.emacs.d ]; then
+        mkdir ~/.emacs.d
+    fi
+    if [ ! -e ~/.emacs.d/init.el ]; then
+        touch ~/.emacs.d/init.el
+    fi
+    if ! grep -q "(setq inhibit-startup-message t)" ~/.emacs.d/init.el; then
+        echo "(setq inhibit-startup-message t)" >> ~/.emacs.d/init.el
+    fi
+}
+
+main "$@"

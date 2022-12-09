@@ -1,4 +1,5 @@
 #!/bin/bash
+
 if [ $# -ne 1 ]; then
   echo "usage: ${0} newuser" 1>&2
   exit 1

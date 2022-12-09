@@ -1,15 +1,15 @@
 #!/bin/bash
-TARGET_USER=${USER}
-if [ $# -ne 0 ]; then
-  TARGET_USER=${1}
-fi
 
-sudo gpasswd -a ${TARGET_USER} adm
-sudo gpasswd -a ${TARGET_USER} dialout
-sudo gpasswd -a ${TARGET_USER} cdrom
-sudo gpasswd -a ${TARGET_USER} sudo
-sudo gpasswd -a ${TARGET_USER} dip
-sudo gpasswd -a ${TARGET_USER} video
-sudo gpasswd -a ${TARGET_USER} plugdev
-sudo gpasswd -a ${TARGET_USER} lpadmin
-sudo gpasswd -a ${TARGET_USER} sambashare
+function main(){
+    local TARGET_USER=${USER}
+    if [ $# -ne 0 ]; then
+        TARGET_USER=${1}
+    fi
+    readonly TARGET_USER
+    local -r TARGET_GROUPS="adm dialout cdrom sudo dip video plugdev lpadmin sambashare"
+    for g in ${TARGET_GROUPS}; do
+        sudo gpasswd -a ${TARGET_USER} ${g}
+    done
+}
+
+main "$@"
