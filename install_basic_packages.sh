@@ -1,7 +1,6 @@
 #!/bin/bash
 
 function main(){
-    sudo apt-get update
     local -r PACKAGES="curl	dbus-x11 emacs net-tools openssh-server \
     python-setuptools python3-setuptools python-pip python-tk \
     unzip \

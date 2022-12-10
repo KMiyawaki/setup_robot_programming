@@ -10,7 +10,7 @@ function main(){
         echo "Japanese apt mirror will be used."
         ./set_japanese_apt.sh
     fi
-    
+    sudo apt-get update
     ./install_ros.sh
     ./install_basic_packages.sh
     ./install_python_packages.sh

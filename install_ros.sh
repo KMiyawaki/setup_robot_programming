@@ -9,7 +9,6 @@ function main(){
     readonly INSTALL_TYPE
     echo "Start install ros-${TARGET_ROS}"
     ./install_ros_key.sh
-    sudo apt-get update
     sudo apt-get install -y --no-install-recommends ros-${TARGET_ROS}-${INSTALL_TYPE}
     
     local -r PACKAGES="build-essential python-rosdep python-rosinstall python-rosinstall-generator python-wstool python-catkin-tools"
