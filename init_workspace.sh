@@ -14,9 +14,9 @@ function main(){
     cd ..
     catkin_make
     cd
-    local -r WS_SETUP="/catkin_ws/devel/setup.bash"
+    local -r WS_SETUP="~/catkin_ws/devel/setup.bash"
     if ! grep -q ${WS_SETUP} ~/.bashrc; then
-        echo "source ~${WS_SETUP}" >> ~/.bashrc
+        echo "source ${WS_SETUP}" >> ~/.bashrc
     fi
 }
 

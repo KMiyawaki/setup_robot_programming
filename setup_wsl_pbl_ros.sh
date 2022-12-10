@@ -10,8 +10,8 @@ function main(){
         echo "Japanese apt mirror will be used."
         ./set_japanese_apt.sh
     fi
-    sudo apt-get update
-    ./install_ros.sh
+    # sudo apt-get update is included in install_ros.sh
+    ./install_ros.sh 
     ./install_basic_packages.sh
     ./install_python_packages.sh
     ./install_ros_packages.sh
