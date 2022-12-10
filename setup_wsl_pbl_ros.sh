@@ -16,7 +16,8 @@ function main(){
     ./install_python_packages.sh
     ./install_ros_packages.sh
     ./install_vscode_extensions_from_file.sh
-    ./upgrade_packages.sh
+    sudo apt-get upgrade -y
+    sudo apt-get autoremove -y
     ./init_workspace.sh
     ./make_beginner_tutorials.sh
     if [ ${MYCOUNTRY} = "JP" ]; then
