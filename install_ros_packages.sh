@@ -13,7 +13,7 @@ function main(){
     robot-state-publisher rosbash rosbridge-suite \
     rqt rqt-common-plugins rviz \
     slam-gmapping smach smach-viewer stage-ros \
-    teleop-twist-joy teleop-twist-keyboard xacro"
+    teleop-twist-joy teleop-twist-keyboard turtlesim xacro"
     
     echo "Start install ros-${TARGET_ROS} packages"
     for p in ${PACKAGES}; do
