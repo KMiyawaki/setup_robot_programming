@@ -13,6 +13,8 @@ function main(){
     # sudo apt-get update is included in install_ros.sh
     ./install_ros.sh desktop-full
     ./install_basic_packages.sh
+    ./install_chrome.sh
+    ./install_vscode.sh
     ./install_python_packages.sh
     ./install_ros_packages.sh
     ./install_vscode_extensions.sh
