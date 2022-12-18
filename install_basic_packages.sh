@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function main(){
-    local -r PACKAGES="curl	dbus-x11 emacs net-tools openssh-server \
+    local -r PACKAGES="curl	dbus-x11 emacs imagemagick net-tools openssh-server \
     python-setuptools python3-setuptools python-pip python-tk \
     unzip \
     x11-apps x11-utils x11-xserver-utils \
