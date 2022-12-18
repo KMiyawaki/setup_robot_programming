@@ -20,9 +20,9 @@ function main(){
     sudo rosdep init
     rosdep update
     
-    if ! grep -q /opt/ros/${TARGET_ROS}/setup.bash ~/.bashrc; then
-        echo "source /opt/ros/${TARGET_ROS}/setup.bash" >> ~/.bashrc
-        source ~/.bashrc
+    if ! grep -q /opt/ros/${TARGET_ROS}/setup.bash ${HOME}/.bashrc; then
+        echo "source /opt/ros/${TARGET_ROS}/setup.bash" >> ${HOME}/.bashrc
+        source ${HOME}/.bashrc
     fi
 }
 

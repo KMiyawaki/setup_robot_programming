@@ -11,14 +11,14 @@ function main(){
         sudo apt-get install -y --no-install-recommends ${p}
     done
     # emacs
-    if [ ! -d ~/.emacs.d ]; then
-        mkdir ~/.emacs.d
+    if [ ! -d ${HOME}/.emacs.d ]; then
+        mkdir ${HOME}/.emacs.d
     fi
-    if [ ! -e ~/.emacs.d/init.el ]; then
-        touch ~/.emacs.d/init.el
+    if [ ! -e ${HOME}/.emacs.d/init.el ]; then
+        touch ${HOME}/.emacs.d/init.el
     fi
-    if ! grep -q "(setq inhibit-startup-message t)" ~/.emacs.d/init.el; then
-        echo "(setq inhibit-startup-message t)" >> ~/.emacs.d/init.el
+    if ! grep -q "(setq inhibit-startup-message t)" ${HOME}/.emacs.d/init.el; then
+        echo "(setq inhibit-startup-message t)" >> ${HOME}/.emacs.d/init.el
     fi
 }
 

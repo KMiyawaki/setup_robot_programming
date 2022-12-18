@@ -11,9 +11,9 @@ function main(){
   local -r EXTENSION_NAME="${FILE%.*}"
   
   if [ $? = 0 ]; then
-    mkdir -p ~/.vscode-server/extensions
+    mkdir -p ${HOME}/.vscode-server/extensions
     unzip -o ${FILE} -d /tmp/${EXTENSION_NAME}
-    mv /tmp/${EXTENSION_NAME}/extension ~/.vscode-server/extensions/${EXTENSION_NAME}
+    mv /tmp/${EXTENSION_NAME}/extension ${HOME}/.vscode-server/extensions/${EXTENSION_NAME}
     rm -f ${FILE}
   else
     return 1

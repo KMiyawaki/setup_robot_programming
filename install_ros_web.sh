@@ -9,7 +9,7 @@ function main(){
     done
     sudo /usr/bin/python2 -m pip install tornado
     sudo /usr/bin/python2 -m pip install pymongo
-    cd ~/catkin_ws/src
+    cd ${HOME}/catkin_ws/src
     git clone https://github.com/GT-RAIL/robot_pose_publisher.git
     cd ..
     catkin_make
