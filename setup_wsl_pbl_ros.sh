@@ -21,7 +21,7 @@ function main(){
     ./init_workspace.sh
     ./make_beginner_tutorials.sh
     if [ ${MYCOUNTRY} = "JP" ]; then
-        echo "Japanese apt mirror will be used."
+        echo "Install Japanese languages."
         ./install_japanese.sh
     fi
 }
