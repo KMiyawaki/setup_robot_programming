@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 
 function main(){
     sudo pip install --upgrade pip
