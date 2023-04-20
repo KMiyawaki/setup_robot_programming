@@ -1,12 +1,19 @@
 #!/bin/bash
 
 function main(){
-    local -r PACKAGES="curl	dbus-x11 emacs imagemagick net-tools openssh-server \
-    python-setuptools python3-setuptools python-pip python-tk \
+    local -r TARGET_ROS=`./get_ros_distoro.sh`
+    local PACKAGES="curl	dbus-x11 emacs imagemagick net-tools openssh-server \
     unzip \
     x11-apps x11-utils x11-xserver-utils \
     zip"
-    
+    if [[ $TARGET_ROS = "noetic" ]]; then
+        PACKAGES="${PACKAGES} python3-setuptools python3-pip python3-tk"
+    else
+        PACKAGES="${PACKAGES} python-setuptools python-pip python-tk"
+    fi
+    readonly PACKAGES
+    echo ${PACKAGES}
+
     for p in ${PACKAGES}; do
         sudo apt-get install -y --no-install-recommends ${p}
     done
