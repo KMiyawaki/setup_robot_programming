@@ -12,7 +12,11 @@ function main(){
     sudo apt-get update
     sudo apt-get install -y --no-install-recommends ros-${TARGET_ROS}-${INSTALL_TYPE}
     
-    local -r PACKAGES="build-essential python-rosdep python-rosinstall python-rosinstall-generator python-wstool python-catkin-tools"
+    local PACKAGES="build-essential python-rosdep python-rosinstall python-rosinstall-generator python-wstool python-catkin-tools"
+    if [[ $TARGET_ROS = "noetic" ]]; then
+        PACKAGES="build-essential python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool python3-catkin-tools"
+    fi
+    readonly PACKAGES
     for p in ${PACKAGES}; do
         sudo apt-get install -y --no-install-recommends ${p}
     done
