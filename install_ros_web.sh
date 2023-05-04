@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function main(){
-    local -r TARGET_ROS=`./get_ros_distoro.sh`
+    local -r TARGET_ROS=`./get_suitable_ros.sh`
     local -r PACKAGES="roswww web-video-server tf2-web-republisher"
     echo "Start install ros-${TARGET_ROS} web packages"
     for p in ${PACKAGES}; do

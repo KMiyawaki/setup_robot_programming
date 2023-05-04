@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function main(){
-    local -r TARGET_ROS=`./get_ros_distoro.sh`
+    local -r TARGET_ROS=`./get_suitable_ros.sh`
     if [ ! -d ${HOME}/.emacs.d ]; then
         mkdir ${HOME}/.emacs.d
     fi

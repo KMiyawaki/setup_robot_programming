@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function main(){
-    local -r TARGET_ROS=`./get_ros_distoro.sh`
+    local -r TARGET_ROS=`./get_suitable_ros.sh`
     echo "**Making workspace. Target ros-${TARGET_ROS}**"
     local -r ROS_SETUP="/opt/ros/${TARGET_ROS}/setup.bash"
     if ! grep -q ${ROS_SETUP} ${HOME}/.bashrc; then

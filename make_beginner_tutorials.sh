@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function main(){
-    local -r TARGET_ROS=`./get_ros_distoro.sh`
+    local -r TARGET_ROS=`./get_suitable_ros.sh`
     local -r ROS_SETUP="/opt/ros/${TARGET_ROS}/setup.bash"
     local -r WS_SETUP="${HOME}/catkin_ws/devel/setup.bash"
     source ${ROS_SETUP}

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function main(){
-    local -r TARGET_ROS=`./get_ros_distoro.sh`
+    local -r TARGET_ROS=`./get_suitable_ros.sh`
     # ROS packages
     local -r PACKAGES="cv-camera control-msgs \
     image-publisher image-transport image-transport-plugins \
