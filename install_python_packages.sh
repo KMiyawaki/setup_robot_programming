@@ -2,24 +2,13 @@
 
 function main(){
     local -r VERSION_ID=`./get_ubuntu_version.sh`
+    local -r PY2_PACKAGES="pycodestyle pylint autopep8==1.6 autoflake"
+    local -r PY3_PACKAGES="pycodestyle pylint autopep8 autoflake"
+    /usr/bin/python3 -m pip install --upgrade pip
+    /usr/bin/python3 -m pip install ${PY3_PACKAGES}
     if [[ $VERSION_ID =~ "16" ]] || [[ $VERSION_ID =~ "18" ]]; then
-        sudo pip install --upgrade pip
-        sudo pip3 install --upgrade pip
-        local -r PACKAGES="pycodestyle pylint autopep8 autoflake"
-        
-        for p in ${PACKAGES}; do
-            sudo /usr/bin/python2 -m pip install ${p}
-            sudo /usr/bin/python3 -m pip install ${p}
-        done
-    elif [[ $VERSION_ID =~ "20" ]] || [[ $VERSION_ID =~ "22" ]]; then
-        sudo pip3 install --upgrade pip
-        local -r PACKAGES="pycodestyle pylint autopep8 autoflake"
-        
-        for p in ${PACKAGES}; do
-            sudo /usr/bin/python3 -m pip install ${p}
-        done
-    else
-        echo "*** ${VERSION_ID} is not supported ***"
+        /usr/bin/python2 -m pip install --upgrade pip
+        /usr/bin/python2 -m pip install ${PY2_PACKAGES}
     fi
 }
 
