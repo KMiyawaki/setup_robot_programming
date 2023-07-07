@@ -9,7 +9,7 @@ function main(){
     if [[ $TARGET_ROS = "noetic" ]]; then
         PACKAGES="${PACKAGES} python3-setuptools python3-pip python3-tk python-is-python3"
     else
-        PACKAGES="${PACKAGES} python-setuptools python-pip python-tk"
+        PACKAGES="${PACKAGES} python3-pip python-setuptools python-pip python-tk"
     fi
     readonly PACKAGES
     echo ${PACKAGES}
