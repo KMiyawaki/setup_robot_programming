@@ -2,7 +2,7 @@
 
 function main(){
     local -r TARGET_ROS=`./get_suitable_ros.sh`
-    local PACKAGES="curl gimp dbus-x11 emacs imagemagick net-tools openssh-server \
+    local PACKAGES="curl dbus-x11 emacs imagemagick net-tools openssh-server \
     unzip \
     x11-apps x11-utils x11-xserver-utils \
     zip"
