@@ -3,6 +3,9 @@
 function main(){
     local -r VERSION_ID=`./get_ubuntu_version.sh`
     if [[ $VERSION_ID =~ "16" ]] || [[ $VERSION_ID =~ "18" ]]; then
+        curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+        sudo python3 get-pip.py --force-reinstall
+        rm -f get-pip.py
         sudo pip install --upgrade pip
         sudo pip3 install --upgrade pip
         local -r PACKAGES="pycodestyle pylint autopep8 autoflake"
