@@ -9,6 +9,11 @@ function main(){
     cd ${HOME}/catkin_ws/src
     catkin_create_pkg beginner_tutorials std_msgs rospy roscpp
     mkdir ${HOME}/catkin_ws/src/beginner_tutorials/scripts
+    cd ${HOME}/catkin_ws/src/beginner_tutorials/scripts
+    wget https://raw.github.com/ros/ros_tutorials/indigo-devel/rospy_tutorials/001_talker_listener/talker.py
+    chmod u+x talker.py
+    wget https://raw.github.com/ros/ros_tutorials/indigo-devel/rospy_tutorials/001_talker_listener/listener.py
+    chmod u+x listener.py
     cd ${HOME}/catkin_ws
     catkin_make
 }
