@@ -1,31 +1,28 @@
 #!/bin/bash
 
 function main(){
-    local -r TARGET_ROS=`./get_suitable_ros.sh`
-    local PACKAGES="curl dbus-x11 emacs imagemagick net-tools openssh-server \
-    unzip \
-    x11-apps x11-utils x11-xserver-utils \
-    zip"
-    if [[ $TARGET_ROS = "noetic" ]]; then
-        PACKAGES="${PACKAGES} python3-setuptools python3-pip python3-tk python-is-python3"
+    local -r MIN_ARG=1
+    if [ $# -lt "${MIN_ARG}" ]; then
+        echo "usage: ${FUNCNAME[0]} {-b|-p|-x}" 1>&2
+        return 1
+    fi
+    local -r VERSION_ID=`./get_ubuntu_version.sh`
+    local -r BASE_PACKAGES="curl emacs net-tools openssh-server unzip zip"
+    local PY_PACKAGES="python3-setuptools python3-pip python-is-python3"
+    local -r X11_PACKAGES="dbus-x11 x11-apps x11-utils x11-xserver-utils"
+    if [[ $VERSION_ID =~ "16" ]] || [[ $VERSION_ID =~ "18" ]]; then
+        PY_PACKAGES="python3-setuptools python3-pip python-setuptools python-pip"
+    fi
+    readonly PY_PACKAGES
+    
+    if [ ${1} = "-b" ]; then
+        sudo apt-get install -y --no-install-recommends ${BASE_PACKAGES}
+    elif [ ${1} = "-p" ]; then
+        sudo apt-get install -y --no-install-recommends ${PY_PACKAGES}
+    elif [ ${1} = "-x" ]; then
+        sudo apt-get install -y --no-install-recommends ${X11_PACKAGES}
     else
-        PACKAGES="${PACKAGES} python3-setuptools python3-pip python-setuptools python-pip python-tk"
-    fi
-    readonly PACKAGES
-    echo ${PACKAGES}
-
-    for p in ${PACKAGES}; do
-        sudo apt-get install -y --no-install-recommends ${p}
-    done
-    # emacs
-    if [ ! -d ${HOME}/.emacs.d ]; then
-        mkdir ${HOME}/.emacs.d
-    fi
-    if [ ! -e ${HOME}/.emacs.d/init.el ]; then
-        touch ${HOME}/.emacs.d/init.el
-    fi
-    if ! grep -q "(setq inhibit-startup-message t)" ${HOME}/.emacs.d/init.el; then
-        echo "(setq inhibit-startup-message t)" >> ${HOME}/.emacs.d/init.el
+        echo "UnKnown option ${1}"
     fi
 }
 
