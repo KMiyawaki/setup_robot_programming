@@ -1,16 +1,17 @@
 #!/bin/bash
 
 function main(){
+    local -r SCRIPT=$(basename $0)
     local -r MIN_ARG=1
     if [ $# -lt "${MIN_ARG}" ]; then
-        echo "usage: ${FUNCNAME[0]} {-b|-p|-x}" 1>&2
+        echo "usage: ${SCRIPT} {-b|-p|-x}" 1>&2
         return 1
     fi
     local -r VERSION_ID=`./get_ubuntu_version.sh`
-    local -r BASE_PACKAGES="curl emacs less net-tools openssh-server unzip zip"
-    local PY_PACKAGES="python3-setuptools python3-pip python-is-python3"
+    local -r BASE_PACKAGES="curl emacs less net-tools openssh-server unzip zip wget"
     local -r X11_PACKAGES="dbus-x11 x11-apps x11-utils x11-xserver-utils"
-    if [[ $VERSION_ID =~ "16" ]] || [[ $VERSION_ID =~ "18" ]]; then
+    local PY_PACKAGES="python3-setuptools python3-pip python-is-python3"
+    if [[ "${VERSION_ID}" =~ "16" ]] || [[ "${VERSION_ID}" =~ "18" ]]; then
         PY_PACKAGES="python3-setuptools python3-pip python-setuptools python-pip"
     fi
     readonly PY_PACKAGES

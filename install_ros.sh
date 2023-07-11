@@ -17,17 +17,10 @@ function main(){
         PACKAGES="build-essential python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool python3-catkin-tools"
     fi
     readonly PACKAGES
-    for p in ${PACKAGES}; do
-        sudo apt-get install -y --no-install-recommends ${p}
-    done
-
+    sudo apt-get install -y --no-install-recommends ${PACKAGES}
     sudo rosdep init
     rosdep update
-    
-    if ! grep -q /opt/ros/${TARGET_ROS}/setup.bash ${HOME}/.bashrc; then
-        echo "source /opt/ros/${TARGET_ROS}/setup.bash" >> ${HOME}/.bashrc
-        source ${HOME}/.bashrc
-    fi
+    ./add_line.sh "source /opt/ros/${TARGET_ROS}/setup.bash" "${HOME}/.bashrc"
 }
 
 main "$@"

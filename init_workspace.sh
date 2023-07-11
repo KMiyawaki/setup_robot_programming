@@ -2,22 +2,20 @@
 
 function main(){
     local -r TARGET_ROS=`./get_suitable_ros.sh`
-    echo "**Making workspace. Target ros-${TARGET_ROS}**"
     local -r ROS_SETUP="/opt/ros/${TARGET_ROS}/setup.bash"
-    if ! grep -q ${ROS_SETUP} ${HOME}/.bashrc; then
-        echo "source ${ROS_SETUP}" >> ${HOME}/.bashrc
-    fi
-    source ${ROS_SETUP}
-    mkdir -p ${HOME}/catkin_ws/src
-    cd ${HOME}/catkin_ws/src/
+    local -r WS="${HOME}/catkin_ws"
+    local -r WS_SRC="${WS}/src"
+    local -r WS_SETUP="${WS}/devel/setup.bash"
+    echo "**Making workspace. Target ros-${TARGET_ROS}**"
+    ./add_line.sh "source ${ROS_SETUP}" "${HOME}/.bashrc"
+    ./add_line.sh "source ${WS_SETUP}" "${HOME}/.bashrc"
+
+    source "${ROS_SETUP}"
+    mkdir -p "${WS_SRC}"
+    cd "${WS_SRC}"
     catkin_init_workspace
-    cd ..
+    cd "${WS}"
     catkin_make
-    cd
-    local -r WS_SETUP="${HOME}/catkin_ws/devel/setup.bash"
-    if ! grep -q ${WS_SETUP} ${HOME}/.bashrc; then
-        echo "source ${WS_SETUP}" >> ${HOME}/.bashrc
-    fi
 }
 
 main "$@"

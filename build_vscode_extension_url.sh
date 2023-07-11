@@ -1,9 +1,10 @@
 #!/bin/bash
 
 function main(){
+    local -r SCRIPT=$(basename $0)
     local -r MIN_ARG=3
     if [ $# -lt "${MIN_ARG}" ]; then
-        echo "usage: ${FUNCNAME[0]} publisher extensionname version" 1>&2
+        echo "usage: ${SCRIPT} publisher extensionname version" 1>&2
         return 1
     fi
     

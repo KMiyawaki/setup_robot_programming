@@ -7,9 +7,7 @@ function main(){
     if [ ! -e ${HOME}/.emacs.d/init.el ]; then
         touch ${HOME}/.emacs.d/init.el
     fi
-    if ! grep -q "(setq inhibit-startup-message t)" ${HOME}/.emacs.d/init.el; then
-        echo "(setq inhibit-startup-message t)" >> ${HOME}/.emacs.d/init.el
-    fi
+    ./add_line.sh "(setq inhibit-startup-message t)" ${HOME}/.emacs.d/init.el
 }
 
 main "$@"
