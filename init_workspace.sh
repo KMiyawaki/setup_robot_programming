@@ -7,6 +7,9 @@ function main(){
     local -r WS_SRC="${WS}/src"
     local -r WS_SETUP="${WS}/devel/setup.bash"
     echo "**Making workspace. Target ros-${TARGET_ROS}**"
+    if [ ! -e ${HOME}/.bashrc ]; then
+        touch ${HOME}/.bashrc
+    fi
     ./add_line.sh "source ${ROS_SETUP}" "${HOME}/.bashrc"
     ./add_line.sh "source ${WS_SETUP}" "${HOME}/.bashrc"
 
