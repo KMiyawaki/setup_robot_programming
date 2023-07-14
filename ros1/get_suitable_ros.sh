@@ -1,7 +1,8 @@
 #!/bin/bash
 
 function main(){
-    local -r VERSION_ID=`./get_ubuntu_version.sh`
+    cd "$(dirname "$0")"
+    local -r VERSION_ID=`../get_ubuntu_version.sh`
     if [[ $VERSION_ID =~ "20" ]]; then
         echo "noetic"
     elif [[ $VERSION_ID =~ "18" ]]; then

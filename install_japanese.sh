@@ -1,6 +1,7 @@
 #!/bin/bash
 
 function main(){
+    cd "$(dirname "$0")"
     local INSTALL_TYPE="WSL"
     if [ $# != 0 ]; then
         INSTALL_TYPE="${1}"

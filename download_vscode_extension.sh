@@ -1,6 +1,7 @@
 #!/bin/bash
 
 function main(){
+    cd "$(dirname "$0")"
     local -r SCRIPT=$(basename $0)
     local -r MIN_ARG=3
     if [ $# -lt "${MIN_ARG}" ]; then

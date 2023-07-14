@@ -1,6 +1,7 @@
 #!/bin/bash
 
 function main(){
+    cd "$(dirname "$0")"
     local -r VERSION_ID=`./get_ubuntu_version.sh`
     local -r CPU="armv7"
     local PY2_PACKAGES="pycodestyle autopep8==1.6 autoflake" # can not install pylint on ARM
@@ -11,10 +12,8 @@ function main(){
     fi
     readonly PY2_PACKAGES
     readonly PY3_PACKAGES
-    # sudo /usr/bin/python3 -m pip install --upgrade pip
     sudo /usr/bin/python3 -m pip install ${PY3_PACKAGES}
     if [[ "${VERSION_ID}" =~ "16" ]] || [[ "${VERSION_ID}" =~ "18" ]]; then
-        # sudo /usr/bin/python2 -m pip install --upgrade pip
         sudo /usr/bin/python2 -m pip install ${PY2_PACKAGES}
     fi
 }

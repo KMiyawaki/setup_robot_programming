@@ -1,9 +1,14 @@
 #!/bin/bash
 
-if [ $# -ne 1 ]; then
-  echo "usage: ${0} newuser" 1>&2
-  exit 1
-fi
+function main(){
+    cd "$(dirname "$0")"
+    if [ $# -ne 1 ]; then
+        echo "usage: ${0} newuser" 1>&2
+        exit 1
+    fi
+    
+    sudo adduser ${1}
+    ./add_user_groups.sh  ${1}
+}
 
-sudo adduser ${1}
-./add_user_groups.sh  ${1}
+main "$@"

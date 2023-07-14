@@ -1,6 +1,7 @@
 #!/bin/bash
 
 function main(){
+    cd "$(dirname "$0")"
     local -r TARGET_ROS=`./get_suitable_ros.sh`
     # ROS packages
     local -r PACKAGES="cv-camera control-msgs \

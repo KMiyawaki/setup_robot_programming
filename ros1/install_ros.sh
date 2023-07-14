@@ -1,6 +1,7 @@
 #!/bin/bash
 
 function main(){
+    cd "$(dirname "$0")"
     local -r TARGET_ROS=`./get_suitable_ros.sh`
     local INSTALL_TYPE="ros-base"
     if [ $# -ne 0 ]; then
@@ -20,7 +21,7 @@ function main(){
     sudo apt-get install -y --no-install-recommends ${PACKAGES}
     sudo rosdep init
     rosdep update
-    ./add_line.sh "source /opt/ros/${TARGET_ROS}/setup.bash" "${HOME}/.bashrc"
+    ../add_line.sh "source /opt/ros/${TARGET_ROS}/setup.bash" "${HOME}/.bashrc"
 }
 
 main "$@"
