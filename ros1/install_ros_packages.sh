@@ -18,7 +18,7 @@ function main(){
     
     echo "Start install ros-${TARGET_ROS} packages"
     for p in ${PACKAGES}; do
-        sudo apt-get install -y --no-install-recommends ros-${TARGET_ROS}-${p}
+        apt-get install -y --no-install-recommends ros-${TARGET_ROS}-${p}
     done
 }
 

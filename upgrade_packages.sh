@@ -1,5 +1,5 @@
 #!/bin/bash
 
-sudo apt-get update
-sudo apt-get upgrade -y
-sudo apt-get autoremove -y
+apt-get update
+apt-get upgrade -y
+apt-get autoremove -y

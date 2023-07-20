@@ -3,13 +3,13 @@
 function main(){
     cd "$(dirname "$0")"
     local -r WS="${HOME}/ros2_ws"
-    sudo apt-get install -y --no-install-recommends libfltk1.3-dev
+    apt-get install -y --no-install-recommends libfltk1.3-dev
     git clone https://github.com/rtv/Stage.git ~/Stage
     cd ~/Stage
     mkdir build
     cd build/
     cmake ..
-    sudo make install
+    make install
     cd ${WS}/src/
     git clone https://github.com/n0nzzz/stage_ros2.git
     cd ${WS}

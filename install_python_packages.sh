@@ -12,9 +12,9 @@ function main(){
     fi
     readonly PY2_PACKAGES
     readonly PY3_PACKAGES
-    sudo /usr/bin/python3 -m pip install ${PY3_PACKAGES}
+    /usr/bin/python3 -m pip install ${PY3_PACKAGES}
     if [[ "${VERSION_ID}" =~ "16" ]] || [[ "${VERSION_ID}" =~ "18" ]]; then
-        sudo /usr/bin/python2 -m pip install ${PY2_PACKAGES}
+        /usr/bin/python2 -m pip install ${PY2_PACKAGES}
     fi
 }
 

@@ -8,9 +8,9 @@ function main(){
     local -r WS_SRC="${WS}/src"
     echo "Start install ros-${TARGET_ROS} web packages"
     for p in ${PACKAGES}; do
-        sudo apt-get install -y --no-install-recommends ros-${TARGET_ROS}-${p}
+        apt-get install -y --no-install-recommends ros-${TARGET_ROS}-${p}
     done
-    sudo /usr/bin/python2 -m pip install tornado pymongo
+    /usr/bin/python2 -m pip install tornado pymongo
     cd ${WS_SRC}
     git clone https://github.com/GT-RAIL/robot_pose_publisher.git
     cd ${WS}
