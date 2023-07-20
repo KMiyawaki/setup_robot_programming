@@ -2,14 +2,14 @@
 
 function main(){
     cd "$(dirname "$0")"
-    local -r TARGET_ROS=`./get_suitable_ros.sh`
+    local -r TARGET_ROS=`./get_suitable_ros1.sh`
     local INSTALL_TYPE="ros-base"
     if [ $# -ne 0 ]; then
         INSTALL_TYPE="${1}"
     fi
     readonly INSTALL_TYPE
     echo "Start install ros-${TARGET_ROS}"
-    ./install_ros_key.sh
+    ./install_ros1_key.sh
     apt-get update
     apt-get install -y --no-install-recommends ros-${TARGET_ROS}-${INSTALL_TYPE}
     

@@ -26,7 +26,7 @@ $ ./install_basic_packages.sh
 $ ./install_python_packages.sh
 $ ./install_chrome.sh
 $ ./add_user_groups.sh
-$ ./install_ros.sh
+$ ./install_ros1.sh
 ```
 
 - Close and reopen the terminal.

@@ -2,7 +2,7 @@
 
 function main(){
     cd "$(dirname "$0")"
-    local -r TARGET_ROS=`./get_suitable_ros.sh`
+    local -r TARGET_ROS=`./get_suitable_ros1.sh`
     local -r PACKAGES="roswww web-video-server tf2-web-republisher"
     local -r WS="${HOME}/catkin_ws"
     local -r WS_SRC="${WS}/src"

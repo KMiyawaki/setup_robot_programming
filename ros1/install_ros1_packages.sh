@@ -2,7 +2,7 @@
 
 function main(){
     cd "$(dirname "$0")"
-    local -r TARGET_ROS=`./get_suitable_ros.sh`
+    local -r TARGET_ROS=`./get_suitable_ros1.sh`
     # ROS packages
     local -r PACKAGES="cv-camera control-msgs \
     image-publisher image-transport image-transport-plugins \

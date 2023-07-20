@@ -68,7 +68,7 @@ $ ./set_japanese_apt.sh
 
 ```shell
 $ cd ~/setup_robot_programming
-$ ./install_ros.sh
+$ ./install_ros1.sh
 ```
 
 ### Install other software and ROS packages
@@ -77,7 +77,7 @@ $ ./install_ros.sh
 $ cd ~/setup_robot_programming
 $ ./install_basic_packages.sh
 $ ./install_python_packages.sh
-$ ./install_ros_packages.sh
+$ ./install_ros1_packages.sh
 ```
 
 ### Install VSCode Extensions
