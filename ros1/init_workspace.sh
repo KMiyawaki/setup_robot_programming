@@ -2,7 +2,8 @@
 
 function main(){
     cd "$(dirname "$0")"
-    local -r TARGET_ROS=`../get_suitable_ros1.sh`
+    local -r CRNT_DIR=`pwd`
+    local -r TARGET_ROS=`./get_suitable_ros1.sh`
     local -r ROS_SETUP="/opt/ros/${TARGET_ROS}/setup.bash"
     local -r WS="${HOME}/catkin_ws"
     local -r WS_SRC="${WS}/src"
@@ -17,6 +18,11 @@ function main(){
     catkin_init_workspace
     cd "${WS}"
     catkin_make
+
+    if [ $# -ne 0 ]; then
+        cd ${CRNT_DIR}
+        ./make_beginner_tutorials.sh
+    fi
 }
 
 main "$@"

@@ -2,6 +2,7 @@
 
 function main(){
     cd "$(dirname "$0")"
+    local -r CRNT_DIR=`pwd`
     local -r TARGET_ROS=`./get_suitable_ros2.sh`
     local -r ROS_SETUP="/opt/ros/${TARGET_ROS}/setup.bash"
     local -r BASHRC="${HOME}/.bashrc"
@@ -22,6 +23,11 @@ function main(){
     cd "${WS}"
     colcon build --symlink-install
     # colcon test
+
+    if [ $# -ne 0 ]; then
+        cd ${CRNT_DIR}
+        ./make_py_pubsub.sh
+    fi
 }
 
 main "$@"
