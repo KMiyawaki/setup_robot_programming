@@ -7,7 +7,7 @@ function main(){
         exit 1
     fi
     
-    adduser ${1}
+    sudo adduser ${1}
     ./add_user_groups.sh  ${1}
 }
 

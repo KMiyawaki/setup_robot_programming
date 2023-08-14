@@ -1,10 +1,10 @@
 #!/bin/bash
 
 function main(){
-    apt-get -y clean
-    apt-get -y autoremove
-    rm -rf /var/cache/apt/archives/*
-    rm -rf /var/lib/apt/lists/*
+    sudo apt-get -y clean
+    sudo apt-get -y autoremove
+    sudo rm -rf /var/cache/apt/archives/*
+    sudo rm -rf /var/lib/apt/lists/*
 }
 
 main "$@"

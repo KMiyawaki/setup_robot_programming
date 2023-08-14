@@ -18,11 +18,11 @@ function main(){
     readonly PY_PACKAGES
     
     if [ ${1} = "-b" ]; then
-        apt-get install -y --no-install-recommends ${BASE_PACKAGES}
+        sudo apt-get install -y --no-install-recommends ${BASE_PACKAGES}
     elif [ ${1} = "-p" ]; then
-        apt-get install -y --no-install-recommends ${PY_PACKAGES}
+        sudo apt-get install -y --no-install-recommends ${PY_PACKAGES}
     elif [ ${1} = "-x" ]; then
-        apt-get install -y --no-install-recommends ${X11_PACKAGES}
+        sudo apt-get install -y --no-install-recommends ${X11_PACKAGES}
     else
         echo "UnKnown option ${1}"
     fi

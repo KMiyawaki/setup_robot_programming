@@ -8,11 +8,11 @@ function main(){
     fi
     readonly INSTALL_TYPE
     local -r PACKAGES="language-pack-ja-base language-pack-ja manpages-ja manpages-ja-dev"
-    apt-get install -y --no-install-recommends ${PACKAGES}
-    update-locale LANG=ja_JP.UTF-8
+    sudo apt-get install -y --no-install-recommends ${PACKAGES}
+    sudo update-locale LANG=ja_JP.UTF-8
     
     if [ ${INSTALL_TYPE} != "WSL" ]; then
-        apt-get install -y --no-install-recommends fonts-takao ibus-mozc
+        sudo apt-get install -y --no-install-recommends fonts-takao ibus-mozc
     fi
 }
 

@@ -9,15 +9,15 @@ function main(){
     fi
     readonly INSTALL_TYPE
     echo "Start install ros-${TARGET_ROS}"
-    apt-get update
+    sudo apt-get update
     ./install_ros2_repos.sh
-    apt-get upgrade -y
-    apt-get install -y --no-install-recommends ros-${TARGET_ROS}-${INSTALL_TYPE}
-    apt-get install -y --no-install-recommends ros-dev-tools python3-colcon-common-extensions
-    rosdep init
+    sudo apt-get upgrade -y
+    sudo apt-get install -y --no-install-recommends ros-${TARGET_ROS}-${INSTALL_TYPE}
+    sudo apt-get install -y --no-install-recommends ros-dev-tools python3-colcon-common-extensions
+    sudo rosdep init
     rosdep update
     # Suppress SetuptoolsDeprecationWarning
-    pip install setuptools==58.2.0
+    sudo pip install setuptools==58.2.0
 }
 
 main "$@"

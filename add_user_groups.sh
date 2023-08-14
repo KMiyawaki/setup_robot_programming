@@ -8,7 +8,7 @@ function main(){
     readonly TARGET_USER
     local -r TARGET_GROUPS="adm dialout cdrom sudo video plugdev"
     for g in ${TARGET_GROUPS}; do
-        gpasswd -a ${TARGET_USER} ${g}
+        sudo gpasswd -a ${TARGET_USER} ${g}
     done
 }
 
