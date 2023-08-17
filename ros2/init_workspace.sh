@@ -8,6 +8,7 @@ function main(){
     local -r BASHRC="${HOME}/.bashrc"
     local -r WS="${HOME}/ros2_ws"
     echo "**Making workspace. Target ros-${TARGET_ROS}**"
+    rosdep update
     ../add_line.sh "source ${ROS_SETUP}" "${BASHRC}"
     ../add_line.sh "source ${WS}/install/setup.bash" "${BASHRC}"
     ../add_line.sh "export ROS_DOMAIN_ID=0" "${BASHRC}"
