@@ -5,6 +5,8 @@ function main(){
     local -r TARGET_ROS=`./get_suitable_ros2.sh`
     if [[ "${TARGET_ROS}" =~ "humble" ]]; then
         local -r WS="${HOME}/ros2_ws"
+        local -r ROS_SETUP="/opt/ros/${TARGET_ROS}/setup.bash"
+        source ${ROS_SETUP}
         sudo apt-get install -y --no-install-recommends git cmake g++ libjpeg8-dev libpng-dev libglu1-mesa-dev libltdl-dev libfltk1.1-dev
         cd ${WS}/src
         git clone --branch ros2 https://github.com/tuw-robotics/Stage.git
