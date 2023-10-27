@@ -8,9 +8,11 @@ function main(){
     local -r BASHRC="${HOME}/.bashrc"
     local -r WS="${HOME}/ros2_ws"
     echo "**Making workspace. Target ros-${TARGET_ROS}**"
+    sudo pip install setuptools==58.2.0
     rosdep update
     ../add_line.sh "source ${ROS_SETUP}" "${BASHRC}"
     ../add_line.sh "source ${WS}/install/setup.bash" "${BASHRC}"
+    ../add_line.sh "export ROS_LOCALHOST_ONLY=1" "${BASHRC}"
     ../add_line.sh "export ROS_DOMAIN_ID=0" "${BASHRC}"
     ../add_line.sh "source /usr/share/colcon_cd/function/colcon_cd.sh" "${BASHRC}"
     ../add_line.sh "source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash" "${BASHRC}"
