@@ -9,7 +9,7 @@ function main(){
         return 1
     fi
     local -r VERSION_ID=`./get_ubuntu_version.sh`
-    local -r BASE_PACKAGES="curl dnsutils emacs iputils-ping less net-tools openssh-server unzip wget x11-apps zip"
+    local -r BASE_PACKAGES="curl dnsutils emacs iputils-ping less net-tools openssh-server unzip wget x11-apps zip xterm"
     local -r X11_PACKAGES="dbus-x11 x11-utils x11-xserver-utils"
     local PY_PACKAGES="python3-setuptools python3-pip python-is-python3"
     if [[ "${VERSION_ID}" =~ "16" ]] || [[ "${VERSION_ID}" =~ "18" ]]; then
