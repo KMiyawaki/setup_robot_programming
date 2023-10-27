@@ -22,6 +22,7 @@ function main(){
     for p in ${PACKAGES}; do
         sudo apt-get install -y --no-install-recommends ros-${TARGET_ROS}-${p}
     done
+    sudo pip3 install transforms3d
 }
 
 main "$@"
