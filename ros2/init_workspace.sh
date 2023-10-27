@@ -11,6 +11,7 @@ function main(){
     rosdep update
     ../add_line.sh "source ${ROS_SETUP}" "${BASHRC}"
     ../add_line.sh "source ${WS}/install/setup.bash" "${BASHRC}"
+    ../add_line.sh "export ROS_LOCALHOST_ONLY=1" "${BASHRC}"
     ../add_line.sh "export ROS_DOMAIN_ID=0" "${BASHRC}"
     ../add_line.sh "source /usr/share/colcon_cd/function/colcon_cd.sh" "${BASHRC}"
     ../add_line.sh "source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash" "${BASHRC}"
