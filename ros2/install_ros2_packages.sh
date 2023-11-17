@@ -11,10 +11,11 @@ function main(){
     key-teleop \
     laser-filters \
     mouse-teleop \
-    navigation2 \
+    navigation2 nav2-bringup \
     robot-state-publisher rosbridge-suite \
     rqt rqt-common-plugins rviz2 \
     slam-toolbox \
+    tf-transformations \
     teleop-twist-joy teleop-twist-keyboard turtlesim \
     xacro"
     
