@@ -9,7 +9,7 @@ function main(){
         return 1
     fi
     local -r VERSION_ID=`./get_ubuntu_version.sh`
-    local -r BASE_PACKAGES="curl dnsutils emacs iputils-ping less net-tools openssh-server unzip wget x11-apps zip xterm"
+    local -r BASE_PACKAGES="curl dnsutils emacs imagemagick iputils-ping less net-tools openssh-server unzip wget x11-apps zip xterm"
     local -r X11_PACKAGES="dbus-x11 x11-utils x11-xserver-utils"
     
     if [ ${1} = "-b" ]; then
