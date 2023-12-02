@@ -11,16 +11,19 @@ function main(){
     local -r VERSION_ID=`./get_ubuntu_version.sh`
     local -r BASE_PACKAGES="curl dnsutils emacs iputils-ping less net-tools openssh-server unzip wget x11-apps zip xterm"
     local -r X11_PACKAGES="dbus-x11 x11-utils x11-xserver-utils"
-    local PY_PACKAGES="python3-setuptools python3-pip python-is-python3"
-    if [[ "${VERSION_ID}" =~ "16" ]] || [[ "${VERSION_ID}" =~ "18" ]]; then
-        PY_PACKAGES="python3-setuptools python3-pip python-setuptools python-pip"
-    fi
-    readonly PY_PACKAGES
     
     if [ ${1} = "-b" ]; then
         sudo apt-get install -y --no-install-recommends ${BASE_PACKAGES}
     elif [ ${1} = "-p" ]; then
-        sudo apt-get install -y --no-install-recommends ${PY_PACKAGES}
+        local PY_PACKAGES="python3-setuptools python3-pip python-is-python3"
+        if [[ "${VERSION_ID}" =~ "16" ]] || [[ "${VERSION_ID}" =~ "18" ]]; then
+            sudo apt-get install -y --no-install-recommends python3-setuptools python3-pip python-setuptools python-pip
+            sudo /usr/bin/python3 -m pip install --upgrade pip
+            sudo /usr/bin/python2 -m pip install --upgrade pip
+        else
+            sudo apt-get install -y --no-install-recommends python3-setuptools python3-pip python-is-python3
+            sudo /usr/bin/python3 -m pip install --upgrade pip
+        fi
     elif [ ${1} = "-x" ]; then
         sudo apt-get install -y --no-install-recommends ${X11_PACKAGES}
     else

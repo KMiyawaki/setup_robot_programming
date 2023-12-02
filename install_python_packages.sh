@@ -3,7 +3,7 @@
 function main(){
     cd "$(dirname "$0")"
     local -r VERSION_ID=`./get_ubuntu_version.sh`
-    local -r CPU="armv7"
+    local -r CPU=`uname -i`
     local PY2_PACKAGES="pycodestyle autopep8==1.6 autoflake" # can not install pylint on ARM
     local PY3_PACKAGES="pycodestyle autopep8 autoflake"
     if [[ "${CPU}" != *arm* ]]; then
