@@ -2,6 +2,10 @@
 
 function main(){
     cd "$(dirname "$0")"
+    if ../find_installed_ros.sh; then
+        echo "Skip ROS2 installation"
+        return 0
+    fi
     local -r TARGET_ROS=`./get_suitable_ros2.sh`
     local INSTALL_TYPE="ros-base"
     if [ $# -ne 0 ]; then
