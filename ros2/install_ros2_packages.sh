@@ -17,6 +17,7 @@ function main(){
     slam-toolbox \
     tf-transformations \
     teleop-twist-joy teleop-twist-keyboard turtlesim \
+    urdf-tutorial \
     xacro"
     
     echo "Start install ros-${TARGET_ROS} packages"

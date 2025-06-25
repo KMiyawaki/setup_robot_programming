@@ -20,8 +20,10 @@ function main(){
     sudo apt-get install -y --no-install-recommends ros-dev-tools python3-colcon-common-extensions
     sudo rosdep init
     rosdep update
-    # Suppress SetuptoolsDeprecationWarning
-    sudo pip install setuptools==58.2.0
+    if [[ "${TARGET_ROS}" =~ "foxy" ]] || [[ "${TARGET_ROS}" =~ "humble" ]]; then
+        # Suppress SetuptoolsDeprecationWarning
+        sudo pip install setuptools==58.2.0
+    fi
 }
 
 main "$@"

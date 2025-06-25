@@ -20,7 +20,11 @@ function main(){
             sudo apt-get install -y --no-install-recommends python3-setuptools python3-pip python-setuptools python-pip
             sudo /usr/bin/python3 -m pip install --upgrade pip
             sudo /usr/bin/python2 -m pip install --upgrade pip
+        elif [[ "${VERSION_ID}" =~ "20" ]] || [[ "${VERSION_ID}" =~ "22" ]]; then
+            sudo apt-get install -y --no-install-recommends python3-setuptools python3-pip python-is-python3
+            sudo /usr/bin/python3 -m pip install --upgrade pip
         else
+            echo -e "[install]\nbreak-system-packages = true" | sudo tee /etc/pip.conf > /dev/null
             sudo apt-get install -y --no-install-recommends python3-setuptools python3-pip python-is-python3
             sudo /usr/bin/python3 -m pip install --upgrade pip
         fi
