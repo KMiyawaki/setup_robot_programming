@@ -14,7 +14,7 @@ function main(){
         exit 1
     fi
     local PY2_PACKAGES="pycodestyle autopep8==1.6 autoflake" # can not install pylint on ARM
-    local PY3_PACKAGES="pycodestyle autopep8 autoflake"
+    local PY3_PACKAGES="pycodestyle autopep8 autoflake isort"
     if [[ "${ARCH}" != *arm* ]]; then
         PY2_PACKAGES="${PY2_PACKAGES} pylint"
         PY3_PACKAGES="${PY3_PACKAGES} pylint"
