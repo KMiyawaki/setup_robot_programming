@@ -4,13 +4,13 @@ function main(){
     cd "$(dirname "$0")"
     local -r TARGET_ROS=`./get_suitable_ros2.sh`
     # ROS packages
-    local -r PACKAGES="control-msgs \
+    local -r PACKAGES="ackermann-msgs control-msgs \
     demo-nodes-cpp demo-nodes-py \
     image-publisher image-transport image-transport-plugins \
     joint-state-publisher-gui joy \
     key-teleop \
     laser-filters \
-    mouse-teleop \
+    marker-msgs mouse-teleop \
     navigation2 nav2-bringup \
     robot-state-publisher rosbridge-suite \
     rqt rqt-common-plugins rviz2 \
