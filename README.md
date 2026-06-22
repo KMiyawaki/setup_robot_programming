@@ -1,12 +1,34 @@
 # Setup Robot Programming PC
 
 If you want to use WSL, see [this](./WSL.md).
+
 ## Clone scripts
 
 ```shell
 $ sudo apt-get install git -y
 $ cd
 $ git clone https://github.com/KMiyawaki/setup_robot_programming.git
+```
+
+## ROS2
+
+```shell
+$ cd ~/setup_robot_programming
+$ ./install_basic_packages.sh -b
+$ ./install_basic_packages.sh -x
+$ ./install_python_packages.sh
+$ ./install_chrome.sh
+$ ./install_vscode.sh
+$ ./install_vscode_extensions.sh 
+$ ./install_vscode_extensions_from_file.sh # For VSCode remote connection
+$ ./add_user_groups.sh
+$ ./setup_emacs.sh
+$ ./install_japanese.sh
+$ cd ./ros2
+$ ./install_ros2.sh
+$ ./install_ros2_packages.sh
+$ ./init_workspace.sh -p
+$ ./install_stage_ros2.sh
 ```
 
 ## For Ubuntu 16.04(optional)
